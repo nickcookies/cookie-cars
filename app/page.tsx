@@ -1,11 +1,4 @@
-import {
-  CarCard,
-  CustomFilter,
-  Hero,
-  SearchBar,
-  SerachManufacturer,
-  ShowMore,
-} from "@/components";
+import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
 import { fuels, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
