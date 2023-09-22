@@ -12,7 +12,8 @@ const SerachManufacturer = ({
   setManuFacturer,
 }: SearchManufacturerProps) => {
   const [query, setQuery] = useState("");
-  const filteredManuftacturers =
+
+  const filteredManufacturers =
     query === ""
       ? manufacturers
       : manufacturers.filter((item) =>
@@ -21,6 +22,7 @@ const SerachManufacturer = ({
             .replace(/\s+/g, "")
             .includes(query.toLowerCase().replace(/\s+/g, ""))
         );
+
   return (
     <div className="search-manufacturer">
       <Combobox value={manufacturer} onChange={setManuFacturer}>
@@ -48,7 +50,7 @@ const SerachManufacturer = ({
             afterLeave={() => setQuery("")}
           >
             <Combobox.Options>
-              {filteredManuftacturers.map((item) => (
+              {filteredManufacturers.map((item) => (
                 <Combobox.Option
                   key={item}
                   value={item}
@@ -72,7 +74,9 @@ const SerachManufacturer = ({
                       {selected ? (
                         <span
                           className={`absolute inset-y-0 left-0 flex items-center pl-3 ${
-                            active ? "text-white" : "text-pribg-primary-purple"
+                            active
+                              ? "text-white"
+                              : "text-primary-blue bg-primary-purple"
                           }`}
                         ></span>
                       ) : null}
